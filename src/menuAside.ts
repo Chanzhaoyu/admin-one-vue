@@ -10,10 +10,19 @@ import {
   mdiTelevisionGuide,
   mdiResponsive,
   mdiPalette,
-  mdiReact,
 } from "@mdi/js";
 
-export default [
+export interface MenuItem {
+  to?: string;
+  icon?: string;
+  label?: string;
+  href?: string;
+  color?: string;
+  target?: "_blank" | "_self";
+  menu?: MenuItem[];
+}
+
+const menuAside: MenuItem[] = [
   {
     to: "/dashboard",
     icon: mdiMonitor,
@@ -72,15 +81,11 @@ export default [
     ],
   },
   {
-    href: "https://github.com/justboil/admin-one-vue-tailwind",
+    href: "https://github.com/Chanzhaoyu/admin-one-vue",
     label: "GitHub",
     icon: mdiGithub,
     target: "_blank",
   },
-  {
-    href: "https://github.com/justboil/admin-one-react-tailwind",
-    label: "React version",
-    icon: mdiReact,
-    target: "_blank",
-  },
 ];
+
+export default menuAside;
