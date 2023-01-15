@@ -49,8 +49,8 @@ export const useStyleStore = defineStore("style", {
       }
     },
 
-    setDarkMode(payload: boolean) {
-      this.darkMode = payload !== null ? payload : !this.darkMode;
+    setDarkMode(payload?: boolean | undefined) {
+      this.darkMode = payload ?? !this.darkMode;
 
       if (typeof localStorage !== "undefined") {
         localStorage.setItem("darkMode", this.darkMode ? "1" : "0");

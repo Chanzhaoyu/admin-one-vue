@@ -9,10 +9,23 @@ import {
   mdiLogout,
   mdiThemeLightDark,
   mdiGithub,
-  mdiReact,
 } from "@mdi/js";
 
-export default [
+export interface MenuItem {
+  icon?: string;
+  label?: string;
+  isCurrentUser?: boolean;
+  isDivider?: boolean;
+  isDesktopNoLabel?: boolean;
+  isToggleLightDark?: boolean;
+  to?: string;
+  href?: string;
+  isLogout?: boolean;
+  target?: "_blank" | "_self";
+  menu?: MenuItem[];
+}
+
+const menuNavBar: MenuItem[] = [
   {
     icon: mdiMenu,
     label: "Sample menu",
@@ -70,14 +83,7 @@ export default [
     icon: mdiGithub,
     label: "GitHub",
     isDesktopNoLabel: true,
-    href: "https://github.com/justboil/admin-one-vue-tailwind",
-    target: "_blank",
-  },
-  {
-    icon: mdiReact,
-    label: "React version",
-    isDesktopNoLabel: true,
-    href: "https://github.com/justboil/admin-one-react-tailwind",
+    href: "https://github.com/Chanzhaoyu/admin-one-vue",
     target: "_blank",
   },
   {
@@ -87,3 +93,5 @@ export default [
     isLogout: true,
   },
 ];
+
+export default menuNavBar;
