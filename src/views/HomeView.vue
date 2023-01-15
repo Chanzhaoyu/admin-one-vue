@@ -1,7 +1,10 @@
+<script setup lang="ts">
+import SectionMain from "@/components/SectionMain.vue";
+import LayoutAuthenticated from "@/layouts/LayoutAuthenticated.vue";
+</script>
+
 <template>
-  <div></div>
+  <LayoutAuthenticated>
+    <SectionMain></SectionMain>
+  </LayoutAuthenticated>
 </template>
-
-<script setup lang="ts"></script>
-
-<style></style>
