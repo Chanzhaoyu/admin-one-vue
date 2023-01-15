@@ -1,5 +1,7 @@
 # Admin One Vue
 
+![Cover](./cover.png)
+
 ![license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 - `Vue ^3.x`
