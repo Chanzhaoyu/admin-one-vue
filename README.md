@@ -1,5 +1,11 @@
-# Admin One On Vue - Free Vue 3.x Tailwind 3.x Vite 4.x TypeScript 4.x Admin Dashboard with dark mode
+# Admin One Vue
 
-[Fork Source](https://github.com/justboil/admin-one-vue-tailwind)
+![license](https://img.shields.io/badge/license-MIT-blue.svg)
 
-coming soon...
+- `Vue ^3.x`
+- `Tailwind ^3.x`
+- `Vite ^4.x`
+- `TypeScript ^4.x`
+- `Dark Mode`
+
+Thanks [admin-one-vue-tailwind](https://github.com/justboil/admin-one-vue-tailwind)
