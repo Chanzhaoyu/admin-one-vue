@@ -3,7 +3,16 @@ export const gradientBgPurplePink = `${gradientBgBase} from-purple-400 via-pink-
 export const gradientBgDark = `${gradientBgBase} from-slate-700 via-slate-900 to-slate-800`;
 export const gradientBgPinkRed = `${gradientBgBase} from-pink-400 via-red-500 to-yellow-500`;
 
-export const colorsBgLight = {
+export type ColorKey =
+  | "white"
+  | "light"
+  | "contrast"
+  | "success"
+  | "danger"
+  | "warning"
+  | "info";
+
+export const colorsBgLight: Record<ColorKey, string> = {
   white: "bg-white text-black",
   light: "bg-white text-black dark:bg-slate-900/70 dark:text-white",
   contrast: "bg-gray-800 text-white dark:bg-white dark:text-black",
@@ -11,9 +20,9 @@ export const colorsBgLight = {
   danger: "bg-red-500 border-red-500 text-white",
   warning: "bg-yellow-500 border-yellow-500 text-white",
   info: "bg-blue-500 border-blue-500 text-white",
-};
+} as const;
 
-export const colorsText = {
+export const colorsText: Record<ColorKey, string> = {
   white: "text-black dark:text-slate-100",
   light: "text-gray-700 dark:text-slate-400",
   contrast: "dark:text-white",
@@ -21,9 +30,9 @@ export const colorsText = {
   danger: "text-red-500",
   warning: "text-yellow-500",
   info: "text-blue-500",
-};
+} as const;
 
-export const colorsOutline = {
+export const colorsOutline: Record<ColorKey, any> = {
   white: [colorsText.white, "border-gray-100"],
   light: [colorsText.light, "border-gray-100"],
   contrast: [colorsText.contrast, "border-gray-900 dark:border-slate-100"],
@@ -31,7 +40,7 @@ export const colorsOutline = {
   danger: [colorsText.danger, "border-red-500"],
   warning: [colorsText.warning, "border-yellow-500"],
   info: [colorsText.info, "border-blue-500"],
-};
+} as const;
 
 export const getButtonColor = (
   color: string,
