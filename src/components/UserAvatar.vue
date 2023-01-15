@@ -4,7 +4,7 @@ import { computed } from "vue";
 const props = withDefaults(
   defineProps<{
     username: string | null;
-    avatar: string | null;
+    avatar?: string | null;
     api?: string | null;
   }>(),
   {
