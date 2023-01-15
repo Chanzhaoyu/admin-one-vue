@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { MenuItem } from "@/menuNavBar";
 import { mdiForwardburger, mdiBackburger, mdiMenu } from "@mdi/js";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
@@ -14,7 +15,7 @@ import AsideMenu from "@/components/AsideMenu.vue";
 import FooterBar from "@/components/FooterBar.vue";
 
 useMainStore().setUser({
-  name: "ZhaoYu Chan",
+  name: "Chan ZhaoYu",
   email: "chenzhaoyu1994@gmail.com",
   avatar: "https://avatars.githubusercontent.com/u/24789441?v=4",
 });
@@ -33,7 +34,15 @@ router.beforeEach(() => {
   isAsideLgActive.value = false;
 });
 
-const menuClick = () => {};
+const menuClick = (event: MouseEvent, item: MenuItem) => {
+  if (item.isToggleLightDark) {
+    styleStore.setDarkMode();
+  }
+
+  if (item.isLogout) {
+    //
+  }
+};
 </script>
 
 <template>

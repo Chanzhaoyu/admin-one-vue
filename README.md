@@ -9,3 +9,29 @@
 - `Dark Mode`
 
 Thanks [admin-one-vue-tailwind](https://github.com/justboil/admin-one-vue-tailwind)
+
+
+## Script
+
+```
+# Run
+pnpm run dev
+```
+
+```
+# Build
+pnpm run build
+```
+
+```
+# Preview
+pnpm run preview
+```
+
+```
+# Lint
+pnpm run lint
+```
+## Licensing
+
+- Licensed under MIT
