@@ -7,7 +7,7 @@ const props = withDefaults(
     prefix?: string;
     suffix?: string;
     value: number;
-    duration: number;
+    duration?: number;
   }>(),
   {
     value: 0,
