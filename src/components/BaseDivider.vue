@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps<{
-  navBar: boolean;
+  navBar?: boolean;
 }>();
 </script>
 
