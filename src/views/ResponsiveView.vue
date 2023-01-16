@@ -1,7 +1,7 @@
+<script setup lang="ts">
+import LayoutAuthenticated from "@/layouts/LayoutAuthenticated.vue";
+</script>
+
 <template>
-  <div></div>
+  <LayoutAuthenticated> </LayoutAuthenticated>
 </template>
-
-<script setup lang="ts"></script>
-
-<style></style>
