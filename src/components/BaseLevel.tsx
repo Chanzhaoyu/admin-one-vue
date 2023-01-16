@@ -29,9 +29,8 @@ export default defineComponent({
         >
           {slots.default?.().map((element, index) => {
             const childClass =
-              props.mobile &&
+              !props.mobile &&
               slots.default &&
-              slots.default?.() &&
               slots.default?.().length > index + 1
                 ? childBaseClass.concat(["mb-6", "md:mb-0"])
                 : childBaseClass;

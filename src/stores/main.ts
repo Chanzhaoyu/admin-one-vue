@@ -1,13 +1,34 @@
 import { defineStore } from "pinia";
 import axios from "axios";
 
+export interface Clients {
+  id: number;
+  avatar: string;
+  login: string;
+  name: string;
+  company: string;
+  city: string;
+  progress: number;
+  created: string;
+  created_mm_dd_yyyy: string;
+}
+
+export interface History {
+  amount: number;
+  account: string;
+  name: string;
+  date: string;
+  type: string;
+  business: string;
+}
+
 export interface MainState {
   userName: string | null;
   userEmail: string | null;
   userAvatar: string | null;
   isFieldFocusRegistered: boolean;
-  clients: any[];
-  history: any[];
+  clients: Clients[];
+  history: History[];
 }
 
 export const useMainStore = defineStore("main", {

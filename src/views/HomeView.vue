@@ -1,19 +1,38 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, ref, onMounted } from "vue";
 import { useMainStore } from "@/stores/main";
 import {
   mdiAccountMultiple,
   mdiCartOutline,
   mdiChartTimelineVariant,
+  mdiMonitorCellphone,
+  mdiReload,
   mdiGithub,
+  mdiChartPie,
 } from "@mdi/js";
+import * as chartConfig from "@/components/Charts/chart.config.js";
+import LineChart from "@/components/Charts/LineChart.vue";
 import SectionMain from "@/components/SectionMain.vue";
 import CardBoxWidget from "@/components/CardBoxWidget.vue";
+import CardBox from "@/components/CardBox.vue";
+import TableSampleClients from "@/components/TableSampleClients.vue";
+import NotificationBar from "@/components/NotificationBar.vue";
 import BaseButton from "@/components/BaseButton.vue";
 import CardBoxTransaction from "@/components/CardBoxTransaction.vue";
 import CardBoxClient from "@/components/CardBoxClient.vue";
 import LayoutAuthenticated from "@/layouts/LayoutAuthenticated.vue";
 import SectionTitleLineWithButton from "@/components/SectionTitleLineWithButton.vue";
+import SectionBannerStarOnGitHub from "@/components/SectionBannerStarOnGitHub.vue";
+
+const chartData = ref();
+
+const fillChartData = () => {
+  chartData.value = chartConfig.sampleChartData();
+};
+
+onMounted(() => {
+  fillChartData();
+});
 
 const mainStore = useMainStore();
 
@@ -94,6 +113,32 @@ const transactionBarItems = computed(() => mainStore.history);
           />
         </div>
       </div>
+
+      <SectionBannerStarOnGitHub class="mt-6 mb-6" />
+
+      <SectionTitleLineWithButton :icon="mdiChartPie" title="Trends overview">
+        <BaseButton
+          :icon="mdiReload"
+          color="whiteDark"
+          @click="fillChartData"
+        />
+      </SectionTitleLineWithButton>
+
+      <CardBox class="mb-6">
+        <div v-if="chartData">
+          <line-chart :data="chartData" class="h-96" />
+        </div>
+      </CardBox>
+
+      <SectionTitleLineWithButton :icon="mdiAccountMultiple" title="Clients" />
+
+      <NotificationBar color="info" :icon="mdiMonitorCellphone">
+        <b>Responsive table.</b> Collapses on mobile
+      </NotificationBar>
+
+      <CardBox has-table>
+        <TableSampleClients />
+      </CardBox>
     </SectionMain>
   </LayoutAuthenticated>
 </template>
