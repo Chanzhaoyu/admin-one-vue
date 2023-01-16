@@ -97,7 +97,7 @@ const menuClick = (event: MouseEvent, item: MenuItem) => {
       />
       <slot />
       <FooterBar>
-        Get
+        Get more with
         <a
           href="https://github.com/Chanzhaoyu/admin-one-vue"
           target="_blank"
