@@ -1,7 +1,19 @@
+<script setup lang="ts">
+import { mdiBallotOutline } from "@mdi/js";
+import SectionMain from "@/components/SectionMain.vue";
+import LayoutAuthenticated from "@/layouts/LayoutAuthenticated.vue";
+import SectionTitleLineWithButton from "@/components/SectionTitleLineWithButton.vue";
+</script>
+
 <template>
-  <div></div>
+  <LayoutAuthenticated>
+    <SectionMain>
+      <SectionTitleLineWithButton
+        :icon="mdiBallotOutline"
+        title="Forms example"
+        main
+      >
+      </SectionTitleLineWithButton>
+    </SectionMain>
+  </LayoutAuthenticated>
 </template>
-
-<script setup lang="ts"></script>
-
-<style></style>
