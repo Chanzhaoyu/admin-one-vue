@@ -10,30 +10,42 @@
 - `TypeScript ^4.x`
 - `Dark Mode`
 
-Thanks [admin-one-vue-tailwind](https://github.com/justboil/admin-one-vue-tailwind)
+Thanks [admin-one-vue-tailwind](https://github.com/justboil/admin-one-vue-tailwind), Some optimizations were made
 
+## Start
+
+```
+# Install pnpm
+npm install pnpm -g
+```
+
+```
+# Install Packages
+pnpm install
+```
 
 ## Script
 
 ```
 # Run
-pnpm run dev
+pnpm dev
 ```
 
 ```
 # Build
-pnpm run build
+pnpm build
 ```
 
 ```
 # Preview
-pnpm run preview
+pnpm preview
 ```
 
 ```
 # Lint
 pnpm run lint
 ```
+
 ## Licensing
 
 - Licensed under MIT
